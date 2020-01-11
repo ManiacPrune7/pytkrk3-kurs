@@ -1,1 +1,2 @@
-# pytkrk3-kurs
+# Python
+Repozytorium kursu programowania w języku Python
