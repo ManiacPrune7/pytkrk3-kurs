@@ -1,0 +1,28 @@
+Wejdz na strone: https://regex101.com/, spróbuj napisac wyrazenia regularne, które pozwola na dopasowanie do nich poszczególnych slów/zdan/wyrazen:
+
+a) napisz regex, który bedzie wzorcem adresu URL stron internetowych, te przyklady powinny zadzialac:
+http://www.mojanieistniejacastrona.pl
+http://www.wp.pl
+https://www.python.org/downloads/
+https://www.google.com/
+
+b) kazde zdanie rozpoczynajace sie od duzej litery "K" oraz konczace sie kropka, nieposiadajace zadnych cyfr.
+
+c) operacje matematyczne, wzorzec powinien pasowac do kazdego dzialania (moze byc nieprawdziwe :D):
+123 + 15 = 138
+90 - 20 = 70
+10 / 5 = 2
+10 * 12345 = 123450
+
+d) liczba w postaci binarnej, wzorzec powinien akceptowac tylko ciagi znakow zlozone z zer i jedynek, np
+01010100011
+10
+0101011
+111111
+000001
+
+e) ciag znakow pasujacy do imienia i nazwiska (niekoniecznie poprawnie podane imie i nazwisko), czyli dwa slowa, z czego pierwsze i drugie musi sie zaczynac od duzej litery i nie zawierac zadnych innych znakow niz litery
+
+f) adres zamieszkania w formacie (zarówno opcje z ulica jak i osiedlem powinny pasowac do jednego wyrazenia):
+ul. Jakas 100 30-900 Kielce
+os. Czerwone 40/20 33-444 Katowice
