@@ -17,6 +17,7 @@
 from typing import Callable
 
 
+# Przykladowe rozwiazanie 1: uzycie enumerate
 def my_reduce(func: Callable, my_list: list):
     """Wlasna definicja funkcji reduce.
 
@@ -25,4 +26,31 @@ def my_reduce(func: Callable, my_list: list):
     :return: pojedyncza wartosc (int, str, float, etc)
 
     """
-    pass
+    result = my_list[0]
+
+    for index, element in enumerate(my_list):
+
+        if index == 0:
+            continue
+
+        result = func(result, element)
+
+    return result
+
+
+# Przykladowe rozwiazanie 2: range i pominiecie elementu pierwszego w petli
+def my_reduce(func: Callable, my_list: list):
+    """Wlasna definicja funkcji reduce.
+
+    :param func: funkcja dwuargumentowa redukujaca liste do jednego elementu.
+    :param my_list: lista, ktora powinna zostac zredukowana do jednego elementu.
+    :return: pojedyncza wartosc (int, str, float, etc)
+
+    """
+    result = my_list[0]
+
+    for i in range(1, len(my_list)):
+
+        result = func(result, my_list[i])
+
+    return result

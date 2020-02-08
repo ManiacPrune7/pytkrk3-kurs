@@ -18,6 +18,7 @@
 from typing import Callable
 
 
+# Przykladowe rozwiazanie 1: uzycie listy skladanej
 def my_map(func: Callable, my_list: list) -> list:
     """wlasna definicja funkcji map.
 
@@ -26,4 +27,20 @@ def my_map(func: Callable, my_list: list) -> list:
     :return: lista ze zmienionymi elementami
 
     """
-    pass
+    return [func(element) for element in my_list]
+
+
+# Przykladowe rozwiazanie 2: uzycie listy tymczasowej
+def my_map(func: Callable, my_list: list) -> list:
+    """wlasna definicja funkcji map.
+
+    :param func: funkcja jednoargumentowa wykonujaca akcje na kazdym elemencie listy my_list.
+    :param my_list: lista ktorej kazdy element zostanie argumentem funkcji func.
+    :return: lista ze zmienionymi elementami
+
+    """
+    new_list = []
+    for elem in my_list:
+        new_list.append(func(elem))
+
+    return new_list

@@ -16,6 +16,8 @@
 from typing import Callable
 
 
+# Przykladowe rozwiazanie 1: uzycie listy skladanej
+
 def my_filter(func: Callable, my_list: list) -> list:
     """Wlasna definicja funkcji filter.
 
@@ -24,4 +26,22 @@ def my_filter(func: Callable, my_list: list) -> list:
     :return: lista po odfiltrowaniu.
 
     """
-    pass
+    return [element for element in my_list if func(element)]
+
+
+# Przykladowe rozwiazanie 2: uzycie listy tymczasowej jako zmiennej pomocniczej
+
+def my_filter(func: Callable, my_list: list) -> list:
+    """Wlasna definicja funkcji filter.
+
+    :param func: funkcja jednoargumentowa odfiltrowujaca, do uzycia wewnatrz naszej funkcji.
+    :param my_list: lista do odfiltrowania.
+    :return: lista po odfiltrowaniu.
+
+    """
+    new_list = []
+    for elem in my_list:
+        if func(elem):
+            new_list.append(elem)
+
+    return new_list
