@@ -24,6 +24,7 @@ class List:
         act = self.head
         if act.data == data:
             self.head = act.next
+            self.count -= 1
             return
         prev = act
         act = act.next
@@ -41,7 +42,7 @@ class List:
     def print_data(self):
         elem = self.head
         while True:
-            print(elem.data)
+            print(elem.data, end=" ")
             if elem.next is None:
                 break
             elem = elem.next
@@ -57,10 +58,15 @@ L.add_element(e2)
 L.add_element(e3)
 L.add_element(e4)
 L.add_element(e5)
-#L.print_data()
+L.print_data()
+print()
 #print(L.count)
 L.remove_element(5)
-L.remove_element(1)
 L.print_data()
-#print(L.count)
+L.remove_element(1)
+print()
+L.print_data()
+print()
+print(L.count)
+print()
 print(L.tail.data)
