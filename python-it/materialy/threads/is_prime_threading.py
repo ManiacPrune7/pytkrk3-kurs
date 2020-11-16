@@ -13,6 +13,7 @@ class MyThread(threading.Thread):
         self.x = x
 
     def run(self):
+        # print('Starting processing %i...' % self.x)
         if is_prime(self.x):
             print(self.x)
 
@@ -32,19 +33,19 @@ def is_prime(x):
 
 
 # sequential
-start = time.perf_counter()
+# start = time.perf_counter()
 result = []
 my_input = [i for i in range(10 ** 13, 10 ** 13 + 500)]
 for i in my_input:
     if is_prime(i):
         result.append(i)
 print('Result 1:', result)
-print('Took: %.2f seconds.' % (time.perf_counter() - start))
+# print('Took: %.2f seconds.' % (time.perf_counter() - start))
 
 # multithreaded
 my_input = [i for i in range(10 ** 13, 10 ** 13 + 500)]
 threads = []
-start = time.perf_counter()
+# start = time.perf_counter()
 for num in my_input:
     temp_thread = MyThread(num)
     temp_thread.start()
@@ -53,5 +54,5 @@ for num in my_input:
 for thread in threads:
     thread.join()
 
-print('Took: %.2f seconds.' % (time.perf_counter() - start))
+# print('Took: %.2f seconds.' % (time.perf_counter() - start))
 print('Finished.')
